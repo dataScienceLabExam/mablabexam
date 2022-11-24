@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         register = findViewById(R.id.b2);
-        e1 = (EditText) findViewById(user);
+        e1 = (EditText) findViewById(R.id.user);
         e2 = (EditText) findViewById(R.id.pass);
     }
 
