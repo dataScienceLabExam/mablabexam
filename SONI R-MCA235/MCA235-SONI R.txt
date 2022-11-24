@@ -1,0 +1,221 @@
+_______________LOGIN____________
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN IN"
+        android:layout_marginLeft="140dp"
+        android:textSize="40dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/tkmceid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="TKMCEID"
+        android:layout_marginTop="230dp"
+        android:gravity="center"
+        android:layout_marginLeft="-100dp"
+
+
+/>
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:layout_marginTop="270dp"
+        android:gravity="center"
+        android:layout_marginLeft="-90dp"/>
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:textColor="@color/white"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="-90dp"
+
+/>
+</LinearLayout>
+________________LOGIN JAVA__________________
+package com.example.mcm;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+    private EditText name,pass;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        name = findViewById(R.id.tkmceid);
+        pass = findViewById(R.id.pass);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sh = getSharedPreferences("MySharedPreference",MODE_PRIVATE);
+        String s1 = sh.getString("Name","");
+        String s2 = sh.getString("Pass","");
+
+        name.setText(s1);
+        pass.setText(s2);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        SharedPreferences shared = getSharedPreferences("MySharedPreference",MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = shared.edit();
+        myEdit.putString("Name",name.getText().toString());
+        myEdit.putString("Pass",pass.getText().toString());
+        myEdit.apply();
+    }
+}
+
+________________________REGISTER_________________
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:text="REGISTER HERE"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:hint="name"
+        android:textSize="30dp"
+        android:layout_marginLeft="-100dp"/>
+    <EditText
+        android:id="@+id/regno"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
+        android:hint=" REG NO"
+        android:textSize="30dp"
+        android:layout_marginLeft="-150dp"
+        />
+
+    <EditText
+        android:id="@+id/name1"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-150dp"
+        android:layout_marginTop="280dp"
+        android:hint="name"
+        android:textSize="30dp" />
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GENDER:"
+        android:layout_marginLeft="-190dp"
+        android:layout_marginTop="290dp"/>
+
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginTop="320dp"
+        android:layout_weight="1"
+        android:text="MALE" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:layout_marginRight="120dp"
+            android:text="REGISTER" />
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-110dp"
+            android:layout_marginTop="320dp"
+            android:layout_weight="1"
+            android:text="FEMALE" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+_______________________REGISTRER JAVA___________________________
+package com.example.mcm;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+    private EditText name,pass;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        name = findViewById(R.id.tkmceid);
+        pass = findViewById(R.id.pass);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sh = getSharedPreferences("MySharedPreference",MODE_PRIVATE);
+        String s1 = sh.getString("Name","");
+        String s2 = sh.getString("Pass","");
+
+        name.setText(s1);
+        pass.setText(s2);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        SharedPreferences shared = getSharedPreferences("MySharedPreference",MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = shared.edit();
+        myEdit.putString("Name",name.getText().toString());
+        myEdit.putString("Pass",pass.getText().toString());
+        myEdit.apply();
+    }
+}
