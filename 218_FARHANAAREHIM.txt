@@ -1,0 +1,412 @@
+MCM SCHOLARSHIP
+
+ACTIVITY_MAIN.XML
+?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/studname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="171dp" />
+
+    <EditText
+        android:id="@+id/studid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="100dp"
+        android:hint="ID"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="246dp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:text="Login"
+        android:onClick="studlogin"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="324dp" />
+
+</LinearLayout>
+
+ACTIVITY_MIDDLEFORM
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".middleform"
+    android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome!!"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.289"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22" />
+
+    <TextView
+        android:id="@+id/nametext"
+        android:layout_width="97dp"
+        android:layout_height="35dp"
+        android:text="test"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.221" />
+
+    <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Register Now"
+            android:onClick="register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.438"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.291" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+ACTIVITY_REGISTER
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRATION FORM"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="30dp"
+        android:textSize="25dp"></TextView>
+
+    <EditText
+        android:id="@+id/srname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:hint="Name"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="164dp" />
+
+
+
+    <EditText
+        android:id="@+id/srid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:inputType="textPersonName"
+        android:hint="ID"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="311dp" />
+
+    <EditText
+        android:id="@+id/srbranch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Branch"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="451dp" />
+
+    <EditText
+        android:id="@+id/sremail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="77dp"
+        android:hint="Email"
+        tools:layout_editor_absoluteY="246dp" />
+
+    <EditText
+        android:id="@+id/srmobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:inputType="phone"
+        android:hint="Mobile"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:id="@+id/srgender"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="528dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="18dp"></TextView>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/m"
+            android:text="Male"></RadioButton>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/f"
+        android:text="Female"></RadioButton>
+    </RadioGroup>
+    <EditText
+        android:id="@+id/srgpa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="77dp"
+        android:hint="GPA"
+        tools:layout_editor_absoluteY="246dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+         android:layout_marginTop="20dp"
+        android:onClick="registernow"
+        android:layout_marginLeft="130dp"></Button>
+"
+
+</LinearLayout>
+ACTIVITY_HOME
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRATION SUCCESSFULL"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+JAVA CODE
+MAINACTIVITY.JAVA
+package com.example.mcmscholarship;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+EditText e1,e2;
+Button bl;
+String strname,strid;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        e1=(EditText) findViewById(R.id.studname);
+        e2=(EditText) findViewById(R.id.studid);
+        bl=(Button)findViewById(R.id.login);
+    }
+    public void studlogin(View view)
+    {
+
+        strname=e1.getText().toString().trim();
+        strid=e2.getText().toString().trim();
+        if(strname.equals("") || strid.equals("") )
+        {
+            Toast.makeText(getApplicationContext(),"enter value",Toast.LENGTH_LONG).show();
+        }
+        else {
+            SharedPreferences sp=getSharedPreferences("Data", Context.MODE_PRIVATE);
+            SharedPreferences.Editor ed=sp.edit();
+            ed.putString("name", e1.getText().toString());
+            ed.putString("id", e2.getText().toString());
+            ed.apply();
+            Intent intent = new Intent(MainActivity.this, middleform.class);
+            startActivity(intent);
+        }
+    }
+}
+MIDDLEFORM.JAVA
+package com.example.mcmscholarship;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class middleform extends AppCompatActivity {
+    String sname,sid;
+
+    TextView t1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_middleform);
+        SharedPreferences sp=getSharedPreferences("Data", Context.MODE_PRIVATE);
+        sname=sp.getString("name","DEFAULT");
+        sid=sp.getString("id","DEFAULT");
+        t1=(TextView) findViewById(R.id.nametext);
+        t1.setText(sname);
+
+    }
+
+    public void register(View view)
+    {
+        Intent intent=new Intent(middleform.this,register.class);
+        intent.putExtra("studentname",sname);
+        intent.putExtra("studentid",sid);
+        startActivity(intent);
+    }
+}
+REGISTER.JAVA
+package com.example.mcmscholarship;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+public class register extends AppCompatActivity {
+String studname,studid,studbranch,studemail,studmobile,studgpa;
+EditText ename,eid,ebranch,eemail,emobile,egpa;
+RadioGroup egen;
+int studgen;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
+        Intent intent=getIntent();
+        studname=intent.getStringExtra("studentname");
+        studid=intent.getStringExtra("studentid");
+        ename=(EditText) findViewById(R.id.srname);
+        eid=(EditText) findViewById(R.id.srid);
+        ename.setText(studname);
+        eid.setText(studid);
+        ebranch=(EditText) findViewById(R.id.srbranch);
+        eemail=(EditText) findViewById(R.id.sremail);
+        emobile =(EditText) findViewById(R.id.srmobile);
+        egen=(RadioGroup) findViewById(R.id.srgender);
+        egpa=(EditText) findViewById(R.id.srgpa);
+        String category[]={"OBC","SC/ST","GENERAL"};
+
+    }
+    public void registernow(View view)
+    {
+        studbranch=ebranch.getText().toString().trim();
+        studemail=eemail.getText().toString().trim();
+        studmobile=emobile.getText().toString().trim();
+        studgpa=egpa.getText().toString().trim();
+        studgen=egen.getCheckedRadioButtonId();
+        if(studbranch.equals("")||studemail.equals("")||studmobile.equals("")||studgpa.equals("")||studgen==-1)
+        {
+            Toast.makeText(getApplicationContext(),"Fill the columns",Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Intent intent=new Intent(register.this,home.class);
+            startActivity(intent);
+        }
+    }
+}
+HOME.JAVA
+package com.example.mcmscholarship;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class home extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+    }
+}
