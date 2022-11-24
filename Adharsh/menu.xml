@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MissingDefaultResource">
+
+    <item android:title="Manchester United"
+        android:id="@+id/mu"/>
+
+    <item android:title="Real Madrid"
+        android:id="@+id/rm"/>
+
+    <item android:title="Barcelona"
+        android:id="@+id/b"/>
+
+    <item android:title="Liverpool"
+        android:id="@+id/l"/>
+
+    <item android:title="Share"
+        android:id="@+id/shr"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_share_24"/>
+</menu>
