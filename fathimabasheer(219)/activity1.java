@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void next(View view) {
-        Intent crt=new Intent();
-        startActivity(crt ,activity2.class);
+        Intent crt=new Intent(this,Activity2.class);
+        startActivity(crt);
 
 
     }
