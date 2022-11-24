@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".cost">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/purple_200"
+            android:text="cost"
+            android:textAlignment="center"
+            android:textSize="21dp" />
+
+        <TextView
+            android:id="@+id/fr"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="fried rice : 200" />
+        <TextView
+            android:id="@+id/br"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Biriyani : 300" />
+        <TextView
+            android:id="@+id/meals"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Meals : 100" />
+        <TextView
+            android:id="@+id/cake"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Cake : 500" />
+        <TextView
+            android:id="@+id/juice"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Juice : 500" />
+
+
+    </LinearLayout>
+
+</FrameLayout>
