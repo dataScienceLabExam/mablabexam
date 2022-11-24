@@ -1,0 +1,502 @@
+Binoy Barnabas
+Tkmce mca 214 s3
+
+1.main activity.java
+
+package com.example.foodfragment;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Button button1 = findViewById(R.id.cost);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmentManager.beginTransaction()
+                        .replace(R.id.frag,Cost.class,null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack("name")
+                        .commit();
+
+            }
+        });
+        Button button2 = findViewById(R.id.customer);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmentManager.beginTransaction()
+                        .replace(R.id.frag,Customer.class,null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack("name")
+                        .commit();
+            }
+        });
+    }
+}
+
+2.main acitivity.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/customers"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/customer"
+            android:layout_width="212dp"
+            android:layout_height="100dp"
+            android:text="Customer" />
+
+        <Button
+            android:id="@+id/cost"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:text="Cost" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="639dp"
+        android:orientation="vertical">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/frag"
+            android:name="com.example.foodfragment.Customer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</LinearLayout>
+
+3.fragmentcustomer.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Customer">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="551dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:id="@+id/PersonName"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Customer name"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Enter your name"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick the item"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <Spinner
+            android:id="@+id/listitems"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:text="Location"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Enter your location"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Booking Time"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editTextTime"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:ems="10"
+            android:inputType="time" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Submit" />
+
+
+    </LinearLayout>
+
+</FrameLayout>
+
+4.fragmentcost.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cost">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="551dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Items"
+                android:textColor="#000000"
+                android:textColorHint="#912828"
+                android:textSize="20dp"
+                android:textStyle="normal|bold|italic" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Cost Per item"
+                android:textColor="#000000"
+                android:textColorHighlight="#B63131"
+                android:textColorHint="#702020"
+                android:textSize="20dp"
+                android:textStyle="normal|bold|italic" />
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="soap"
+            android:textColor="#000000"
+            android:textColorHint="#912828"
+            android:textSize="20dp"
+            android:textStyle="normal|bold|italic" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="5$"
+            android:textColor="#000000"
+            android:textColorHighlight="#B63131"
+            android:textColorHint="#702020"
+            android:textSize="20dp"
+            android:textStyle="normal|bold|italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="conditioner"
+            android:textColor="#000000"
+            android:textColorHint="#912828"
+            android:textSize="20dp"
+            android:textStyle="normal|bold|italic" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="25$"
+            android:textColor="#000000"
+            android:textColorHighlight="#B63131"
+            android:textColorHint="#702020"
+            android:textSize="20dp"
+            android:textStyle="normal|bold|italic" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="shampoo"
+                android:textColor="#000000"
+                android:textColorHint="#912828"
+                android:textSize="20dp"
+                android:textStyle="normal|bold|italic" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="10$"
+                android:textColor="#000000"
+                android:textColorHighlight="#B63131"
+                android:textColorHint="#702020"
+                android:textSize="20dp"
+                android:textStyle="normal|bold|italic" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Body Lotion"
+                android:textColor="#000000"
+                android:textColorHint="#912828"
+                android:textSize="20dp"
+                android:textStyle="normal|bold|italic" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="30$"
+                android:textColor="#000000"
+                android:textColorHighlight="#B63131"
+                android:textColorHint="#702020"
+                android:textSize="20dp"
+                android:textStyle="normal|bold|italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="sunscreen"
+                android:textColor="#000000"
+                android:textColorHint="#912828"
+                android:textSize="20dp"
+                android:textStyle="normal|bold|italic" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="10$"
+                android:textColor="#000000"
+                android:textColorHighlight="#B63131"
+                android:textColorHint="#702020"
+                android:textSize="20dp"
+                android:textStyle="normal|bold|italic" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>
+
+5.cost.java
+
+package com.example.foodfragment;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link Cost#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class Cost extends Fragment {
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    public Cost() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment Cost.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static Cost newInstance(String param1, String param2) {
+        Cost fragment = new Cost();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_cost, container, false);
+    }
+}
+
+
+6.customer.java
+
+package com.example.foodfragment;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link Customer#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class Customer extends Fragment {
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    public Customer() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment Customer.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static Customer newInstance(String param1, String param2) {
+        Customer fragment = new Customer();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_customer, container, false);
+    }
+}
