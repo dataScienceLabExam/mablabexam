@@ -1,0 +1,315 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qr\f0\fs22\lang9 Mohammedf Shibili O\par
+S3 MCA\par
+Roll.No:28\par
+
+\pard\sa200\sl276\slmult1\qc\fs44 fragments\par
+\par
+
+\pard\sa200\sl276\slmult1\ul\b\fs28 main activity.xml\par
+\ulnone\b0 <?xml version="1.0" encoding="utf-8"?>\par
+<androidx.appcompat.widget.LinearLayoutCompat\par
+    xmlns:android="http://schemas.android.com/apk/res/android"\par
+    xmlns:app="http://schemas.android.com/apk/res-auto"\par
+    xmlns:tools="http://schemas.android.com/tools"\par
+    android:layout_width="match_parent"\par
+    android:layout_height="wrap_content"\par
+    android:orientation="vertical"\par
+    tools:context=".MainActivity">\par
+\par
+    <TextView\par
+        android:id="@+id/textView"\par
+        android:layout_width="274dp"\par
+        android:layout_height="45dp"\par
+        android:text="FOOD BOOKING"\par
+        android:gravity="center"\par
+        android:textColor="@color/purple_700"\par
+        android:textSize="75px"\par
+        app:layout_constraintBottom_toBottomOf="parent"\par
+        app:layout_constraintEnd_toEndOf="parent"\par
+        app:layout_constraintHorizontal_bias="0.496"\par
+        app:layout_constraintStart_toStartOf="parent"\par
+        app:layout_constraintTop_toTopOf="parent"\par
+        app:layout_constraintVertical_bias="0.023" />\par
+\par
+    <ImageView\par
+        android:id="@+id/imageView"\par
+        android:layout_width="371dp"\par
+        android:layout_height="202dp"\par
+        app:layout_constraintBottom_toBottomOf="parent"\par
+        app:layout_constraintEnd_toEndOf="parent"\par
+        app:layout_constraintStart_toStartOf="parent"\par
+        app:layout_constraintTop_toBottomOf="@+id/textView"\par
+        app:layout_constraintVertical_bias="0.034"\par
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />\par
+    <LinearLayout\par
+        android:layout_width="match_parent"\par
+        android:layout_height="wrap_content"\par
+        android:orientation="horizontal">\par
+\par
+    <Button\par
+        android:id="@+id/b1"\par
+        android:layout_width="206dp"\par
+        android:layout_height="43dp"\par
+        android:text="BOOKING"\par
+        app:layout_constraintBottom_toBottomOf="parent"\par
+        app:layout_constraintEnd_toEndOf="parent"\par
+        app:layout_constraintHorizontal_bias="0.009"\par
+        app:layout_constraintStart_toStartOf="parent"\par
+        app:layout_constraintTop_toBottomOf="@+id/imageView"\par
+        app:layout_constraintVertical_bias="0.053" />\par
+\par
+    <Button\par
+        android:id="@+id/b2"\par
+        android:layout_width="193dp"\par
+        android:layout_height="46dp"\par
+        android:layout_marginStart="12dp"\par
+\par
+        android:text="PRICE"\par
+        app:layout_constraintBottom_toBottomOf="parent"\par
+        app:layout_constraintStart_toEndOf="@+id/b1"\par
+        app:layout_constraintTop_toBottomOf="@+id/imageView"\par
+        app:layout_constraintVertical_bias="0.051" /></LinearLayout>\par
+    <LinearLayout\par
+        android:layout_width="match_parent"\par
+        android:layout_height="match_parent"\par
+        android:orientation="vertical">\par
+\par
+        <androidx.fragment.app.FragmentContainerView\par
+            android:id="@+id/fragmentContainerView3"\par
+            android:name="com.ajil.myapplication.booking"\par
+            android:layout_width="match_parent"\par
+            android:layout_height="681dp"\par
+            android:layout_weight="1" />\par
+\par
+    </LinearLayout>\par
+\par
+</androidx.appcompat.widget.LinearLayoutCompat>\ul\b\par
+main activity.java\par
+\ulnone\b0 package com.ajil.myapplication;\par
+\par
+import androidx.appcompat.app.AppCompatActivity;\par
+import androidx.fragment.app.FragmentManager;\par
+\par
+import android.os.Bundle;\par
+import android.view.View;\par
+import android.widget.Button;\par
+\par
+public class MainActivity extends AppCompatActivity \{\par
+\par
+    @Override\par
+    protected void onCreate(Bundle savedInstanceState) \{\par
+        super.onCreate(savedInstanceState);\par
+        setContentView(R.layout.activity_main);\par
+        FragmentManager fragmentManager = getSupportFragmentManager();\par
+\par
+        Button btnbook = findViewById(R.id.b1);\par
+        btnbook.setOnClickListener(new View.OnClickListener() \{\par
+            @Override\par
+            public void onClick(View view) \{\par
+                fragmentManager.beginTransaction()\par
+                        .replace(R.id.fragmentContainerView3 , booking.class , null)\par
+                        .setReorderingAllowed(true)\par
+                        .addToBackStack("name")\par
+                        .commit();\par
+            \}\par
+        \});\par
+        Button btnprice = findViewById(R.id.b2);\par
+        btnprice.setOnClickListener(new View.OnClickListener() \{\par
+            @Override\par
+            public void onClick(View view) \{\par
+                fragmentManager.beginTransaction()\par
+                        .replace(R.id.fragmentContainerView3 , price.class , null)\par
+                        .setReorderingAllowed(true)\par
+                        .addToBackStack("name")\par
+                        .commit();\par
+            \}\par
+        \});\par
+\par
+    \}\par
+\}\ul\b\par
+booking.xml\par
+\ulnone\b0 <?xml version="1.0" encoding="utf-8"?>\par
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"\par
+    xmlns:tools="http://schemas.android.com/tools"\par
+    android:layout_width="match_parent"\par
+    android:layout_height="match_parent"\par
+    tools:context=".booking">\par
+<RelativeLayout\par
+    android:layout_width="match_parent"\par
+    android:layout_height="match_parent">\par
+    <TextView\par
+        android:id="@+id/m"\par
+        android:layout_width="235dp"\par
+        android:layout_height="46dp"\par
+        android:layout_centerHorizontal="true"\par
+        android:layout_marginStart="1px"\par
+        android:text="BOOKING"\par
+        android:gravity="center"\par
+        android:textSize="75px"/>\par
+\par
+    <EditText\par
+        android:id="@+id/t1"\par
+        android:layout_width="wrap_content"\par
+        android:layout_height="wrap_content"\par
+        android:ems="10"\par
+        android:layout_below="@id/m"\par
+        android:inputType="textPersonName"\par
+        android:hint="Name" />\par
+    <TextView\par
+        android:id="@+id/it"\par
+        android:layout_width="match_parent"\par
+        android:layout_height="wrap_content"\par
+        android:layout_centerHorizontal="true"\par
+        android:text="ITEMS"\par
+        android:gravity="center"\par
+        android:textSize="60px"\par
+        android:layout_below="@id/t1"\par
+        android:textColor="@color/teal_700"/>\par
+    <LinearLayout\par
+        android:layout_width="match_parent"\par
+        android:layout_height="wrap_content"\par
+        android:id="@+id/l1"\par
+        android:orientation="horizontal"\par
+        android:layout_below="@id/it">\par
+    <CheckBox\par
+        android:id="@+id/c1"\par
+        android:layout_width="wrap_content"\par
+        android:layout_height="wrap_content"\par
+        android:text="BIRIYANI" />\par
+        <CheckBox\par
+            android:id="@+id/c2"\par
+            android:layout_width="wrap_content"\par
+            android:layout_height="wrap_content"\par
+            android:text="NOODLES" />\par
+        <CheckBox\par
+            android:id="@+id/c3"\par
+            android:layout_width="wrap_content"\par
+            android:layout_height="wrap_content"\par
+            android:text="FRIED RICE" />\par
+        <CheckBox\par
+            android:id="@+id/c4"\par
+            android:layout_width="wrap_content"\par
+            android:layout_height="wrap_content"\par
+            android:text="MEALS" />\par
+    </LinearLayout>\par
+    <EditText\par
+        android:id="@+id/t3"\par
+        android:layout_width="wrap_content"\par
+        android:layout_height="wrap_content"\par
+        android:ems="10"\par
+        android:inputType="textPersonName"\par
+        android:hint="LOCATION"\par
+        android:layout_below="@id/l1"/>\par
+    <EditText\par
+        android:id="@+id/t4"\par
+        android:layout_width="wrap_content"\par
+        android:layout_height="wrap_content"\par
+        android:ems="10"\par
+        android:inputType="textPersonName"\par
+        android:hint="TIME"\par
+        android:layout_below="@id/t3"/>\par
+    \par
+\par
+\par
+</RelativeLayout>\par
+</FrameLayout>\ul\b\par
+price.xml\par
+\ulnone\b0 <?xml version="1.0" encoding="utf-8"?>\par
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"\par
+    xmlns:tools="http://schemas.android.com/tools"\par
+    android:layout_width="match_parent"\par
+    android:layout_height="match_parent"\par
+    tools:context=".price">\par
+\par
+    <!-- TODO: Update blank fragment layout -->\par
+\par
+    <RelativeLayout\par
+        android:layout_width="match_parent"\par
+        android:layout_height="456dp">\par
+\par
+        <TextView\par
+            android:id="@+id/H1"\par
+            android:layout_width="wrap_content"\par
+            android:layout_height="wrap_content"\par
+            android:gravity="center"\par
+            android:text="PRICE"\par
+            android:textSize="75px" />\par
+\par
+        <TextView\par
+            android:id="@+id/p1"\par
+            android:layout_width="274dp"\par
+            android:layout_height="46dp"\par
+            android:layout_below="@+id/H1"\par
+            android:text="BIRIYANI" />\par
+\par
+        <TextView\par
+            android:id="@+id/p2"\par
+            android:layout_width="61dp"\par
+            android:layout_height="37dp"\par
+            android:layout_below="@id/H1"\par
+            android:layout_marginStart="11dp"\par
+            android:layout_marginTop="5dp"\par
+            android:layout_toEndOf="@id/p1"\par
+            android:text="180" />\par
+\par
+        <TextView\par
+            android:id="@+id/p3"\par
+            android:layout_width="279dp"\par
+            android:layout_height="31dp"\par
+            android:layout_below="@id/p1"\par
+            android:layout_marginTop="63dp"\par
+            android:text="NOODLES" />\par
+\par
+        <TextView\par
+            android:id="@+id/p4"\par
+            android:layout_width="64dp"\par
+            android:layout_height="30dp"\par
+            android:layout_below="@id/p2"\par
+            android:layout_marginStart="10dp"\par
+            android:layout_marginTop="66dp"\par
+            android:layout_toEndOf="@id/p3"\par
+            android:text="120" />\par
+\par
+        <TextView\par
+            android:id="@+id/p5"\par
+            android:layout_width="271dp"\par
+            android:layout_height="31dp"\par
+            android:layout_below="@id/p3"\par
+            android:layout_marginTop="68dp"\par
+            android:text="FRIED RICE" />\par
+\par
+        <TextView\par
+            android:id="@+id/p6"\par
+            android:layout_width="57dp"\par
+            android:layout_height="30dp"\par
+            android:layout_below="@id/p4"\par
+            android:layout_marginStart="8dp"\par
+            android:layout_marginTop="68dp"\par
+            android:layout_toEndOf="@id/p5"\par
+            android:text="180" />\par
+        <TextView\par
+            android:id="@+id/p8"\par
+            android:layout_width="271dp"\par
+            android:layout_height="31dp"\par
+            android:layout_below="@id/p5"\par
+            android:layout_marginTop="68dp"\par
+            android:text="MEALS" />\par
+\par
+        <TextView\par
+            android:id="@+id/p9"\par
+            android:layout_width="57dp"\par
+            android:layout_height="30dp"\par
+            android:layout_below="@id/p6"\par
+            android:layout_marginStart="8dp"\par
+            android:layout_marginTop="68dp"\par
+            android:layout_toEndOf="@id/p8"\par
+            android:text="180" />\par
+    </RelativeLayout>\par
+\par
+\par
+</FrameLayout>\ul\b\par
+\fs22\par
+}
+ 
